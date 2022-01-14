@@ -22,7 +22,7 @@ class PayPal extends Component {
         let return_value = false;
 
         // const csrf = getValueFromSecureStore('csrf');
-        const token = "43|wgrRrBYbGq31R0uwGu4eGJEPm0lfZQg2SiPnblTb";
+        const token = "6|Vq4tfj1KLP2Buyir1D0JUbGCgsZ4qGmnMM8yS71e";
 
         const config = {
            
@@ -38,7 +38,9 @@ class PayPal extends Component {
         check_out = this.formatDate(check_out);
 
 
+        console.log(check_in,check_out,guests);
 
+        
         axios.defaults.baseURL = 'http://tourism.nhely.hu';
         const promise = axios.post('/api/paypal/' + id, {
             check_in: check_in,
@@ -49,7 +51,9 @@ class PayPal extends Component {
         const dataPromise = promise.then((response) => {
             return response;
         }).catch((error) => {
-            console.log(error)
+            if(error.response.data) {
+                console.log(error.response.data);
+            }
         })
         return dataPromise;
     }
