@@ -36,10 +36,6 @@ class PayPal extends Component {
         };
         check_in = this.formatDate(check_in);
         check_out = this.formatDate(check_out);
-
-
-        console.log(check_in,check_out,guests);
-
         
         axios.defaults.baseURL = 'http://tourism.nhely.hu';
         const promise = axios.post('/api/paypal/' + id, {
@@ -52,7 +48,7 @@ class PayPal extends Component {
             return response;
         }).catch((error) => {
             if(error.response.data) {
-                console.log(error.response.data);
+                return error.response.data;         
             }
         })
         return dataPromise;

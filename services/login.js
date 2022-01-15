@@ -20,6 +20,7 @@ class Login extends Component {
             save('csrf',response.data.csrf);
             save('token',response.data.token);
             save('user',response.data.user);
+            //SecureStore.setItemAsync(key, value);
             return response;
         })
         return dataPromise;
