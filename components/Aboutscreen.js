@@ -144,7 +144,7 @@ export default class Aboutscreen extends Component {
                                             }}
                                             fontWeight="bold"
                                         >
-                                            6 mins ago
+                                            {data.date_difference}
                                         </Text>
                                         <Button
                                             leftIcon={<Icon as={FontAwesome} name="calendar-check-o" color="white" />}

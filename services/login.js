@@ -6,6 +6,7 @@ import { save, getValueFromSecureStore } from './securestore';
 class Login extends Component {
 
     loginHandle(username, password) {
+        
         let return_value = false;
         axios.defaults.baseURL = 'http://tourism.nhely.hu/';
         const promise =
@@ -17,9 +18,9 @@ class Login extends Component {
 
             });
         const dataPromise = promise.then((response) => {
-            save('csrf',response.data.csrf);
-            save('token',response.data.token);
-            save('user',response.data.user);
+            save('csrf',JSON.stringify(response.data.csrf));
+            save('token',JSON.stringify(response.data.token));
+            save('user',JSON.stringify(response.data.user));
             //SecureStore.setItemAsync(key, value);
             return response;
         })
