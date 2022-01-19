@@ -16,7 +16,7 @@ export default class App extends React.Component {
 }
 
 const AppNavigator = createStackNavigator({
- 
+
   About: {
     screen: AboutScreen,
     navigationOptions: { headerShown: false }
@@ -30,6 +30,7 @@ const AppNavigator = createStackNavigator({
     screen: HomeScreen,
     navigationOptions: { headerShown: false }
   },
+  
   
 });
 
