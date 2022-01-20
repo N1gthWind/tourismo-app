@@ -69,7 +69,7 @@ export default class Aboutscreen extends Component {
     Example = () => {
         let city_datas = this.state.items[0];
         return (
-            <ScrollView
+            <ScrollView m="4"
                 _contentContainerStyle={{
                     px: "20px",
                     mb: "4",
